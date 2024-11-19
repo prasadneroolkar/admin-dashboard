@@ -1,7 +1,12 @@
 import React from "react";
 
 function Dashboard() {
-  return <div>Dashboard</div>;
+  return (
+    <div className="admin-container">
+      <aside>jhsdgf</aside>
+      <main>mainSS</main>
+    </div>
+  );
 }
 
 export default Dashboard;
