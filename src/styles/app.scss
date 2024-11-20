@@ -5,76 +5,172 @@
 // @import "dashboardapp";
 // @import "mediaquery";
 
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+* {
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  &:focus,
+  &:active,
+  &:hover {
+    &::-moz-focus-inner {
+      border: 0;
+    }
+
+    outline: 0;
+  }
+}
+
+
+
+body,
+html {
+  @include font-rem($htmlFontSize);
+  font-family: "Poppins",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  overflow-y: scroll;
 
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+body,
+input,
+select,
+textarea {
+  font-family: "Open Sans", sans-serif;
+}
+
+/* ==========================================================================
+     Headings and paragraph
+     ========================================================================== */
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-style: normal;
+  margin-bottom: 0px;
+  // @extend %baseSpacing;
+
+}
+
+h1,
+.h1 {
+  @include font-rem(26px, 38.4px);
+  font-weight: 500;
+  letter-spacing: -0.25px;
+
+  @include bp(tablet-sm) {
+    @include font-rem(26px, 38.4px);
+  }
+}
+
+h2,
+.h2 {
+  @include font-rem(32px, 32px);
+  font-weight: 600;
+  // letter-spacing: -1.92px;
+
+
+  @include bp(tablet-sm) {
+    @include font-rem(32px, 32px);
+    // margin-bottom: 32px;
+  }
+}
+
+h3,
+.h3 {
+  @include font-rem(24px, 36.8px);
+  font-weight: 700;
+
+  @include bp(tablet-sm) {
+    @include font-rem(24px, 36.8px);
+  }
+
+  @include bp(sm) {
+    @include font-rem(18px, 27px);
+
+  }
+}
+
+h4,
+.h4 {
+  @include font-rem(15px, 19.5px);
+  font-weight: 700;
+
+  @include bp(tablet-sm) {
+    @include font-rem(22px, 28.6px);
+  }
+}
+
+h5,
+.h5 {
+  @include font-rem(20px, 20.8px);
+  font-weight: 500;
+
+  @include bp(mobile) {
+    @include font-rem(14px, 18.2px);
+  }
+}
+
+h6,
+.h6 {
+  @include font-rem(16px, 20.8px);
+  font-weight: 700;
+
+  @include bp(mobile) {
+    @include font-rem(14px, 18.2px);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+li {
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 a {
-  text-decoration: none;
-  color: black;
-}
+  color: inherit;
+  transition: 0.3s;
+  text-decoration: inherit;
 
-.red {
-  color: red;
-}
-
-.purple {
-  color: rgb(47, 0, 255);
-}
-
-.green {
-  color: rgb(0, 195, 0);
-}
-
-.admin-container {
-  @include grid(1fr 4fr, 2rem);
-  height: 100vh;
-  background-color: rgb(247, 247, 247);
-
-  >aside {
-    width: 100%;
-    background-color: white;
-    padding: 1rem;
-    z-index: 10;
-    overflow-y: auto;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
-    >div {
-      margin: 2rem 1rem;
-
-      >h5 {
-        @include heading(2px);
-        opacity: 0.8;
-        margin: 1rem 0;
-      }
-
-      >ul {
-        @include flex(column, unset, unset, 0.5rem);
-        list-style: none;
-
-        >li {
-          padding: 0.5rem 1rem;
-          border-radius: 10px;
-
-          a {
-            color: rgba(0, 0, 0, 0.825);
-            @include flex(row, unset);
-          }
-        }
-      }
-    }
+  &:hover {
+    color: inherit;
+    text-decoration: inherit;
   }
+}
+
+img {
+  max-width: 100%;
+}
+
+
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
 }
